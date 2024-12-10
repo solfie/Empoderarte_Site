@@ -1,0 +1,62 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empoderarte+</title>
+    <link rel="stylesheet" href="{% static 'css/styleindexdeslogado.css' %}">
+</head>
+
+<body>
+
+
+    <header>
+        <div class="logo">
+            <img src="{% static 'img/logo.png' %}" alt="Empoderarte+">
+        </div>
+        <div class="pesquisa">
+            <input type="text" placeholder="Buscar...">
+            <button>🔍</button>
+        </div>
+
+        <div class="usuario-info">
+            <span class="usuario-nome">LIS LIMA REGAZZI{{ user.first_name }}</span>
+        </div>
+    </header>
+
+    <main>
+       
+
+
+
+
+
+    </main>
+    <footer>
+        <div class="footer-container">
+            <div class="footer-section">
+                <h4>Sobre</h4>
+                <p>O Empoderarte+ é uma plataforma dedicada a conectar mulheres e divulgar suas obras para o mundo.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Links úteis</h4>
+                <ul>
+                    <li><a href="{% url 'common:indexDeslogado' %}">Início</a></li>
+                    <li><a href="{% url 'usuarios:cadastro_usuario' %}">Cadastro</a></li>
+                    <li><a href="{% url 'usuarios:cadastro_usuario' %}">Login</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contato</h4>
+                <p>Email: contato@empoderarte.com</p>
+                <p>Telefone: (11) 99999-9999</p>
+                <p>Endereço: Rua da Arte, 123 - Espírito Santo, ES</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; {{ ano_atual }} Empoderarte+. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+</body>
+</html>
