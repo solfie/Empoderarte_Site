@@ -1,181 +1,131 @@
-<<<<<<< HEAD
-/* Estilos gerais para o cabeçalho */
-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #333;
-    color: white;
-}
-
-/* Logo */
-.logo img {
-    height: 50px;
-}
-
-/* Barra de pesquisa */
-.pesquisa {
-    display: flex;
-    align-items: center;
-=======
-/* Estilização para a foto do usuário */
-.foto-usuario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 50px; /* Ajuste a posição conforme necessário */
-    bottom: 20px; /* Ajuste a posição conforme necessário */
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; /* Torna a imagem redonda */
-    background-color: #f0f0f0; /* Fundo da área da foto */
-    overflow: hidden; /* Garante que a imagem não ultrapasse os limites do círculo */
-}
-
-.foto-usuario img {
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Fundo da página */
+  body {
+    background-color: #f7f5ec;
+  }
+  
+  /* Container geral */
+  .container {
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* Faz com que a imagem cubra completamente a área redonda */
-    border-radius: 50%; /* Garantir que a imagem também seja redonda */
-}
-
-/* Ajustes para a área de pesquisa */
-.pesquisa {
-    position: relative;
->>>>>>> 498d4e5156a9f6fbc25b2a663bf2642eb762e960
-}
-
-.pesquisa input {
-    padding: 10px;
-<<<<<<< HEAD
-    border: none;
-    border-radius: 5px;
-    margin-right: 10px;
-=======
-    border: 1px solid #ccc;
-    border-radius: 5px;
->>>>>>> 498d4e5156a9f6fbc25b2a663bf2642eb762e960
-}
-
-.pesquisa button {
-    padding: 10px;
-<<<<<<< HEAD
-    background-color: #ff8c00;
-    border: none;
-    border-radius: 5px;
-    color: white;
-}
-
-/* Estilos para o nome do usuário */
-.usuario-info {
-    display: flex;
-    align-items: center;  /* Garante que o nome fique centralizado verticalmente */
-    color: white;
-}
-
-.usuario-nome {
-    font-size: 16px;
-    font-weight: bold;  /* Nome em negrito */
-    margin-left: 10px;  /* Espaço entre a barra de pesquisa e o nome */
-=======
-    border: none;
-    background-color: #ccc;
-    cursor: pointer;
-}
-/* Estilização para a foto do usuário */
-.foto-usuario {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 20px; /* Ajuste a posição conforme necessário */
-    bottom: 20px; /* Ajuste a posição conforme necessário */
-    width: 60px;
-    height: 60px;
-    border-radius: 50%; /* Torna a imagem redonda */
-    background-color: #f0f0f0; /* Fundo da área da foto */
-    overflow: hidden; /* Garante que a imagem não ultrapasse os limites do círculo */
-}
-
-.foto-usuario img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Faz com que a imagem cubra completamente a área redonda */
-    border-radius: 50%; /* Garantir que a imagem também seja redonda */
-}
-
-/* Ajustes para a área de pesquisa */
-.pesquisa {
-    position: relative;
-}
-
-.pesquisa input {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.pesquisa button {
-    padding: 10px;
-    border: none;
-    background-color: #ccc;
-    cursor: pointer;
-}
-
-footer {
-    background-color: #9d876f;
-    color: #3b342c;
-    padding: 10px 0;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.footer-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
     max-width: 1200px;
     margin: 0 auto;
     padding: 20px;
-}
-
-.footer-section {
-    
-    flex: 1;
-    margin: 10px;
-    min-width: 200px;
-}
-
-.footer-section h4 {
-    margin-bottom: 15px;
-    font-size: 1.2em;
-}
-
-.footer-section ul {
-    
-    list-style: none;
-    padding: 0;
-}
-
-.footer-section ul li {
-    margin: 5px 0;
-}
-
-.footer-section ul li a {
-    color: #3b342c;
-    text-decoration: none;
-}
-
-.footer-section ul li a:hover {
-    text-decoration: underline;
-}
-
-.footer-bottom {
-    border-top: 1px solid #3b342c;
-    padding-top: 10px;
+  }
+  
+  /* Cabeçalho */
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #e0d1b4;
+    padding: 10px 20px;
+    border-radius: 10px;
+  }
+  
+  /* Logo */
+  .logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #3e4422;
+  }
+  
+  .logo p {
+    font-size: 12px;
+    color: #3e4422;
+  }
+  
+  /* Barra de busca */
+  .search-bar {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  
+  .search-bar input {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .search-bar button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #3e4422;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Informações do usuário */
+  .user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .user-info p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #3e4422;
+  }
+  
+  .user-icon {
+    width: 40px;
+    height: 40px;
+    background-color: #a4a29d;
+    border-radius: 50%;
+  }
+  
+  /* Perfil */
+  .profile {
     margin-top: 20px;
-    font-size: 0.9em;
->>>>>>> 498d4e5156a9f6fbc25b2a663bf2642eb762e960
-}
+  }
+  
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .profile-icon {
+    width: 100px;
+    height: 100px;
+    background-color: #a4a29d;
+    border-radius: 50%;
+  }
+  
+  .profile-info h2 {
+    font-size: 20px;
+    color: #3e4422;
+  }
+  
+  .edit-button {
+    padding: 10px 20px;
+    border: 1px solid #3e4422;
+    background-color: transparent;
+    color: #3e4422;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* Galeria */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  
+  .gallery-item {
+    width: 100%;
+    padding-top: 100%; /* Para manter o aspecto quadrado */
+    background-color: #c8b798;
+    border-radius: 5px;
+  }

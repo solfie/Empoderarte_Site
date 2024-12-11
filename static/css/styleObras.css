@@ -1,0 +1,180 @@
+/* Configuração geral */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5efe4;
+    color: #4a4a4a;
+  }
+  
+  /* Navbar */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #d1b997;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    height: 50px;
+  }
+  
+  .search-bar {
+    width: 800px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .user-info {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-info span {
+    margin-right: 10px;
+    font-size: 16px;
+    color: #4a4a4a;
+  }
+  
+  .user-icon-container {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d1b997;
+    border-radius: 50%;
+  }
+  
+  .user-icon {
+    width: 30px;
+    height: 30px;
+  }
+  
+  /* Página do produto */
+  .product-page {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 120px;
+  }
+  
+  .product-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d1b997;
+    border-radius: 10px;
+    padding: 200px;
+    margin-right: 80px;
+  }
+  
+  .product-image img {
+    max-width: 200%;
+    max-height: 300px;
+  }
+  
+  .product-details h2 {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .product-details p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-bottom: 20px;
+  }
+  
+  .price {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .price h3 {
+    font-size: 24px;
+    color: #333;
+  }
+  
+  /* Botões */
+  .actions {
+    display: flex;
+    flex-direction: column; /* Empilha os botões verticalmente */
+    align-items: center; /* Centraliza horizontalmente */
+    gap: 15px; /* Espaçamento entre os botões */
+    margin-top: 20px; /* Espaço acima dos botões */
+  }
+  
+  .buy-button {
+    background-color: #1d5c2e;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 150px; /* Ajusta o tamanho do botão */
+    text-align: center;
+  }
+  
+  .buy-button:hover {
+    background-color: #144c22;
+  }
+  
+  /* Botão de favorito (Coração Transparente) */
+  .favorite-button {
+    background-color: transparent;
+    border: none;
+    font-size: 30px; /* Tamanho do ícone */
+    cursor: pointer;
+    color: #4a4a4a;
+    transition: color 0.3s ease; /* Efeito de transição na cor */
+  }
+  
+  .favorite-button:hover {
+    color: #1d5c2e; /* Cor do coração quando o mouse passa em cima */
+    transform: scale(1.2); /* Aumenta o tamanho do coração */
+    transition: transform 0.3s ease;
+  }
+  
+  .favorite-icon {
+    display: inline-block;
+    font-size: 30px; /* Tamanho do coração */
+  }
+  
+  /* Status */
+  .status {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin-top: 20px; /* Espaço acima da seção de status */
+  }
+  
+  .available {
+    color: green;
+  }
+  
+  .unavailable {
+    color: red;
+  }
+  
+  /* Recomendações */
+  .recommendations {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    margin-left: 20px;
+  }
+  
+  .recommendation-box {  
+    width: 150px;               
+    height: 150px;        
+    background-color: #d1b997;
+    border-radius: 5px;
+  }
+  

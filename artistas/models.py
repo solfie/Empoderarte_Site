@@ -3,10 +3,7 @@ from usuarios.models import Perfil
 
 class Artista(models.Model):
     usuario = models.OneToOneField(Perfil, on_delete=models.CASCADE, related_name='perfil')  # Relacionamento 1-para-1 com User
-<<<<<<< HEAD
     bio = models.TextField(null=True, blank=True)  # Torna o campo bio opcional
-=======
->>>>>>> 498d4e5156a9f6fbc25b2a663bf2642eb762e960
     def __str__(self):
         return f"Artista: {self.usuario.user.username}"
 
@@ -60,6 +57,7 @@ class Obra(models.Model):
     imagem = models.ImageField(upload_to='static/img/')
     disponivel = models.BooleanField(default=True)  # Corrigido
     categorias = models.ManyToManyField(Categorias, blank=True)
+    data_criacao = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
         return self.titulo

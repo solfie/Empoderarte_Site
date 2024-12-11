@@ -1,0 +1,59 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EmpoderArte</title>
+    <link rel="stylesheet" href="{% static 'css/styleObras.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <img src="img/logo.png" alt="Logo EmpoderArte" class="logo">
+            <input type="text" placeholder="Buscar" class="search-bar">
+            <div class="user-info">
+                <span>Rita Lis</span>
+                <div class="user-icon-container">
+                    <img src="img/user-icon.png" alt="Ícone do usuário" class="user-icon">
+                </div>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="product-page">
+            <div class="product-image">
+                <img src="img/product-placeholder.png" alt="Produto" class="image">
+            </div>
+            <div class="product-details">
+                <h2>ARTE DA MONALISA</h2>
+                <p>
+                    A Mona Lisa é uma das pinturas mais famosas do mundo, criada pelo artista renascentista Leonardo da Vinci entre 1503 e 1506.
+                    Conhecida por seu enigmático sorriso e olhar misterioso, a obra retrata uma mulher sentada, com as mãos cruzadas, em um cenário 
+                    natural suave e montanhoso. Seu fundo nebuloso e a técnica inovadora de sfumato — que suaviza as transições de cor — dão à pintura
+                    uma profundidade e realismo impressionantes. Atualmente, a Mona Lisa está exposta no Museu do Louvre, em Paris, e é considerada um 
+                    ícone de beleza e mistério na história da arte.
+                </p>
+                <div class="price">
+                    <h3>R$ 5065</h3>
+                </div>
+                <div class="actions">
+                    <button class="buy-button">COMPRAR</button>
+                    <button class="favorite-button">❤</button>
+                </div>
+                <div class="status">
+                    <span class="available">✔ Disponível</span>
+                    <span class="unavailable">✖ Indisponível</span>
+                </div>
+            </div>
+            <div class="recommendations">
+                <div class="recommendation-box"></div>
+                <div class="recommendation-box"></div>
+                <div class="recommendation-box"></div>
+                <div class="recommendation-box"></div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>
+

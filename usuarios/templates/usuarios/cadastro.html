@@ -36,10 +36,9 @@
         </div>
         
         <!-- Formulário de Cadastro -->
-<<<<<<< HEAD
         <form method="POST" enctype="multipart/form-data" class="form-cadastro" action="{% url 'usuarios:cadastro_usuario' %}" id="cadastro-form">
             {% csrf_token %}
-            <h2>Formulário de Cadastro</h2>
+            <h2>Cadastro</h2>
 
             <!-- Nome e Sobrenome -->
             <div class="form-control">
@@ -114,65 +113,6 @@
 
             <button type="submit">Cadastrar</button>
         </form>
-=======
-        <div class="container">
-            <div class="logo">
-            </div>
-            
-            <form class="form-cadastro" id="cadastro-form" style="display:block;"method="POST" enctype="multipart/form-data" class="form-cadastro">
-                    {% csrf_token %}
-              <h2>Cadastro</h2>
-              
-              <!-- Campo Nome de Usuário -->
-              <label for="nome">Nome de Usuário</label>
-              <input type="text" id="nome" name="nome" placeholder="Digite seu nome">
-              
-              <!-- Campo Senha -->
-              <label for="senha">Senha</label>
-              <input type="password" id="senha" name="senha" placeholder="Digite sua senha">
-              
-              <!-- Campo Email -->
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" placeholder="Digite seu email">
-              
-              <!-- Data de Nascimento -->
-              <label for="data-nascimento">Data de Nascimento</label>
-              <input type="date" id="data-nascimento" name="data-nascimento">
-              
-              <!-- Upload Foto de Perfil -->
-              <label for="foto-perfil">Foto de Perfil</label>
-              <input type="file" id="foto-perfil" name="foto-perfil">
-
-              <label class="section-title">Interesses</label>
-              <div class="interesses-container">
-                  {% for interesse in perfil_form.interesses %}
-                  <div class="form-check">
-                      {{ interesse }}
-                  </div>
-                  {% endfor %}
-              </div> 
-        
-                        <!-- Tipo de Usuário -->
-                <label class="section-title">Tipo de Usuário</label>
-                <div class="radio-container">
-                <div class="radio-item">
-                    <input type="radio" id="usuario-comum" name="tipo-usuario" value="comum">
-                    <label for="usuario" class="form-radio-label">Usuário</label>
-                </div>
-                <div class="radio-item">
-                    <input type="radio" id="artista" name="tipo-usuario" value="artista" onclick="toggleBiografia(true)">
-                    <label for="artista" class="form-radio-label">Artista</label>
-                </div>
-                </div>
-                
-                <!-- Campo Biografia -->
-                <div id="biografia-section" style="display: none;">
-                <label for="biografia">Biografia</label>
-                <textarea id="biografia" name="biografia" rows="4" placeholder="Escreva sobre você"></textarea>
-                </div>
-                <button type="submit"><a  href="{% url 'common:indexDeslogado' %}">Cadastrar</a></button>
-            </form>
->>>>>>> 498d4e5156a9f6fbc25b2a663bf2642eb762e960
 
         <!-- Formulário de Login -->
         <form method="POST" class="form-login" action="{% url 'usuarios:login_usuario' %}" id="login-form" style="display: none;">
@@ -190,12 +130,8 @@
                 <label for="login_password">Senha</label>
                 <input type="password" id="login_password" name="password" required>
             </div>
-<<<<<<< HEAD
 
             <button type="submit">Entrar</button>
-=======
-            <button type="submit"><a  href="{% url 'common:indexDeslogado' %}">Login</a></button>
->>>>>>> 498d4e5156a9f6fbc25b2a663bf2642eb762e960
         </form>
         <script>
             function toggleBiografia(isArtista) {

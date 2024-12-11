@@ -6,3 +6,7 @@ from artistas.models import Artista, Obra
 def perfil_artista (request, artista_id):
     artista = get_object_or_404(Artista, pk=artista_id)
     return render (request, "artistas/perfil_artista.html", {"artista": artista})
+
+def lista_produtos(request):
+    obras = Obra.objects.all()  
+    return render(request, 'artistas/obras.html', {'obras': obras})
