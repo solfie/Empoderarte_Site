@@ -33,7 +33,7 @@ class Perfil(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='perfil')
     data_nascimento = models.DateField(null=True, blank=True)
     interesses = models.ManyToManyField(Interesse, blank=True)
-    foto = models.ImageField(upload_to='static/img/static')
+    foto = models.ImageField(upload_to='static/img')
     
     def __str__(self):
         return f"Perfil de {self.user.username}"

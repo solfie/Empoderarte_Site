@@ -14,20 +14,22 @@
         </div>
         <div class="pesquisa">
             <input type="text" placeholder="Buscar...">
-            <button>🔍</button>
+            <button >🔍</button>
         </div>
         <div class="usuario">
+            <a id="sub" href="{% url 'usuarios:perfil_usuario' request.user.id %}">
             {% if request.user.perfil.foto %}
                 <!-- Exibe a foto do usuário logado -->
-                <img src="{{ request.user.perfil.foto.url }}" id="foto_user" alt="Foto de perfil">
+                <img src="{% static request.user.perfil.foto %}" id="foto_user" alt="Foto de perfil">
             {% else %}
                 <!-- Caso o usuário não tenha foto -->
                 <img src="{% static 'img/default-avatar.png' %}" id="foto_user" alt="Foto de perfil">
             {% endif %}
+        </a>
 
         
         </div>
-        <p>{{ request.user.first_name }}</p>
+        <p><b>{{ request.user.first_name }}</b></p>
     </header>
 
     <main>

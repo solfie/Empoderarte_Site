@@ -7,6 +7,7 @@ from datetime import datetime
 from .models import Interesse, Perfil
 from django.views.decorators.csrf import csrf_exempt
 from django.contrib import messages
+from artistas.models import Obra
 
 @csrf_exempt
 def cadastro(request):
@@ -92,5 +93,8 @@ def login_usuario(request):
 
 
 def perfil_usuario(request, usuario_id):
+    obras = Obra.objects.all()  # Busca todas as obras
     usuario = get_object_or_404(Perfil, user__id=usuario_id)
-    return render(request, "usuarios/perfil_usuario.html", {"usuario": usuario})
+    return render(request, "usuarios/perfil_usuario.html", {"usuario": usuario, "obras": obras})
+    
+    

@@ -9,22 +9,29 @@
 </head>
 <body>
   <div class="container">
-    <header class="header">
+    <header>
       <div class="logo">
-        <h1>Empoderarte</h1>
-        <p>A ARTE VEM DO FEMININO</p>
+          <img src="{% static 'img/logo.png' %}" alt="Empoderarte+">
       </div>
-      <div class="search-bar">
-        <input type="text" placeholder="Buscar">
-        <button>&#x1F50D;</button>
+      <div class="pesquisa">
+          <input type="text" placeholder="Buscar...">
+          <button >🔍</button>
       </div>
-      <div class="user-info">
-        <p>Rita Lis</p>
-        <div class="user-icon"></div>
-      </div>
-    </header>
+      <div class="usuario">
+          {% if request.user.perfil.foto %}
+              <!-- Exibe a foto do usuário logado -->
+              <img src="{{ request.user.perfil.foto }}" id="foto_user" alt="Foto de perfil">
+          {% else %}
+              <!-- Caso o usuário não tenha foto -->
+              <img src="{% static 'img/default-avatar.png' %}" id="foto_user" alt="Foto de perfil">
+          {% endif %}
 
-    <main class="profile">
+      
+      </div>
+      <p><b>{{ request.user.first_name }}</b></p>
+  </header>
+
+<main class="profile">
       <div class="profile-header">
         <div class="profile-icon"></div>
         <div class="profile-info">
@@ -32,22 +39,45 @@
           <button class="edit-button">EDITAR PERFIL</button>
         </div>
       </div>
-      <div class="gallery">
-        <!-- 12 placeholders for gallery items -->
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-      </div>
-    </main>
-  </div>
+      <section>
+        <h2>Obras</h2>
+        <div class="lista-obras">
+            {% for obra in obras %}
+            <div class="obra">
+                <div class="imagem">
+                    <img src="{% static obra.imagem %}" alt="{{ obra.titulo }}" class="imgObras">
+                </div>
+                <p>{{ obra.titulo }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+  
+  <footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>Sobre</h4>
+            <p>O Empoderarte+ é uma plataforma dedicada a conectar mulheres e divulgar suas obras para o mundo.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Links úteis</h4>
+            <ul>
+                <li><a href="{% url 'common:indexDeslogado' %}">Início</a></li>
+                <li><a href="{% url 'usuarios:cadastro_usuario' %}">Cadastro</a></li>
+                <li><a href="{% url 'usuarios:cadastro_usuario' %}">Login</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Contato</h4>
+            <p>Email: contato@empoderarte.com</p>
+            <p>Telefone: (11) 99999-9999</p>
+            <p>Endereço: Rua da Arte, 123 - Espírito Santo, ES</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; {{ ano_atual }} Empoderarte+. Todos os direitos reservados.</p>
+    </div>
+</footer>
 </body>
 </html>

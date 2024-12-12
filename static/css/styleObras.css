@@ -62,19 +62,17 @@ body {
   }
   
   .product-image {
-    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #d1b997;
     border-radius: 10px;
-    padding: 200px;
     margin-right: 80px;
   }
   
   .product-image img {
-    max-width: 200%;
-    max-height: 300px;
+    width: 150%;
+    height: 150%;
   }
   
   .product-details h2 {
