@@ -4,50 +4,87 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Empoderarte</title>
-  <link rel="stylesheet" href="{% static 'css/styleperfil_artista.css' %}"> <!-- Certifique-se de que o arquivo styles.css está no mesmo diretório -->
+  <title> Empoderarte </title>
+  <link rel="stylesheet"  href="{% static 'css/stylePerfilArtista.css' %}"> <!-- Certifique-se de que o arquivo styles.css está no mesmo diretório -->
 </head>
 <body>
   <div class="container">
-    <header class="header">
+    <header>
       <div class="logo">
-        <h1>Empoderarte</h1>
-        <p>A ARTE VEM DO FEMININO</p>
+          <img src="{% static 'img/logo.png' %}" alt="Empoderarte+">
       </div>
-      <div class="search-bar">
-        <input type="text" placeholder="Buscar">
-        <button>&#x1F50D;</button>
+      <div class="pesquisa">
+          <input type="text" placeholder="Buscar...">
+          <button >🔍</button>
       </div>
-      <div class="user-info">
-        <p>Rita Lis</p>
-        <div class="user-icon"></div>
-      </div>
-    </header>
+      <div class="usuario">
+        <a id="sub" href="{% url 'usuarios:perfil_usuario' request.user.id %}">
+        {% if request.user.perfil.foto %}
+            <!-- Exibe a foto do usuário logado -->
+            <img src="{% static request.user.perfil.foto %}" id="foto_user" alt="Foto de perfil">
+        {% else %}
+            <!-- Caso o usuário não tenha foto -->
+            <img src="{% static 'img/default-avatar.png' %}" id="foto_user" alt="Foto de perfil">
+        {% endif %}
+    </a>
+      <p><b>{{ request.user.first_name }}</b></p>
+  </header>
 
-    <main class="profile">
+<main class="profile">
       <div class="profile-header">
-        <div class="profile-icon"></div>
+        <div class="profile-icon">{% if request.user.perfil.foto %}
+          <!-- Exibe a foto do usuário logado -->
+          <img src="{% static artista.usuario.foto %}" id="foto_user" alt="Foto de perfil">
+      {% else %}
+          <!-- Caso o usuário não tenha foto -->
+          <img src="{% static 'img/default-avatar.png' %}" id="foto_user" alt="Foto de perfil">
+      {% endif %}</div>
         <div class="profile-info">
-          <h2>Rita Lis</h2>
-          <button class="edit-button">EDITAR PERFIL</button>
+          <h2>{{ artista.usuario.user.first_name }}</h2>
+        
         </div>
       </div>
-      <div class="gallery">
-        <!-- 12 placeholders for gallery items -->
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-        <div class="gallery-item"></div>
-      </div>
-    </main>
-  </div>
+      <section>
+        <h2>Obras</h2>
+        <div class="lista-obras">
+            {% for obra in obras %}
+            <div class="obra">
+              <a id="sub" href="{% url 'artistas:lista_obras' obra.id %}">
+                <div class="imagem">
+                    <img src="{% static obra.imagem %}" alt="{{ obra.titulo }}" class="imgObras">
+                </div>
+                <p>{{ obra.titulo }}</p>
+              </a>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+</main>
+  
+  <footer>
+    <div class="footer-container">
+        <div class="footer-section">
+            <h4>Sobre</h4>
+            <p>O Empoderarte+ é uma plataforma dedicada a conectar mulheres e divulgar suas obras para o mundo.</p>
+        </div>
+        <div class="footer-section">
+            <h4>Links úteis</h4>
+            <ul>
+                <li><a href="{% url 'common:indexDeslogado' %}">Início</a></li>
+                <li><a href="{% url 'usuarios:cadastro_usuario' %}">Cadastro</a></li>
+                <li><a href="{% url 'usuarios:cadastro_usuario' %}">Login</a></li>
+            </ul>
+        </div>
+        <div class="footer-section">
+            <h4>Contato</h4>
+            <p>Email: contato@empoderarte.com</p>
+            <p>Telefone: (11) 99999-9999</p>
+            <p>Endereço: Rua da Arte, 123 - Espírito Santo, ES</p>
+        </div>
+    </div>
+    <div class="footer-bottom">
+        <p>&copy; {{ ano_atual }} Empoderarte+. Todos os direitos reservados.</p>
+    </div>
+</footer>
 </body>
 </html>

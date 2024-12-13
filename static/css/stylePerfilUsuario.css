@@ -255,17 +255,25 @@ footer {
   font-size: 0.9em;
 }
 
-#foto_user{
-  position: relative;
-  border-radius: 100px;
-  width: 10%;
-  height: 10%;
-  left: 90%;
+.usuario {
+  display: flex; /* Alinha os elementos em linha */
+  align-items: center; /* Centraliza verticalmente */
+  gap: 20px; /* Espaçamento entre imagem e texto */
+  margin: 20px; /* Espaçamento externo */
 }
 
-.usuario p{
-  position: absolute;
-  top: 150px;
+/* Estilização da foto do usuário */
+.usuario #foto_user {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.usuario p {
+  margin: 0;
+  font-size: 16px;
+  color: #333;
 }
 
 footer {
@@ -473,3 +481,12 @@ a{
   color:#6b5b4a;
 }
 
+
+/* Estilização da foto do usuário */
+.usuario #foto_user,
+.profile-icon img {
+  border-radius: 50%;
+  width: 100px;  /* Definindo o tamanho fixo para a imagem */
+  height: 100px;  /* Garantindo que altura e largura sejam iguais */
+  object-fit: cover;  /* Garante que a imagem cubra o espaço sem distorção */
+}

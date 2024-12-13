@@ -18,25 +18,31 @@
           <button >🔍</button>
       </div>
       <div class="usuario">
-          {% if request.user.perfil.foto %}
-              <!-- Exibe a foto do usuário logado -->
-              <img src="{{ request.user.perfil.foto }}" id="foto_user" alt="Foto de perfil">
-          {% else %}
-              <!-- Caso o usuário não tenha foto -->
-              <img src="{% static 'img/default-avatar.png' %}" id="foto_user" alt="Foto de perfil">
-          {% endif %}
-
-      
-      </div>
+        <a id="sub" href="{% url 'usuarios:perfil_usuario' request.user.id %}">
+        {% if request.user.perfil.foto %}
+            <!-- Exibe a foto do usuário logado -->
+            <img src="{% static request.user.perfil.foto %}" id="foto_user" alt="Foto de perfil">
+        {% else %}
+            <!-- Caso o usuário não tenha foto -->
+            <img src="{% static 'img/default-avatar.png' %}" id="foto_user" alt="Foto de perfil">
+        {% endif %}
+    </a>
       <p><b>{{ request.user.first_name }}</b></p>
   </header>
 
 <main class="profile">
       <div class="profile-header">
-        <div class="profile-icon"></div>
+        <div class="profile-icon">{% if request.user.perfil.foto %}
+            <!-- Exibe a foto do usuário logado -->
+            <img src="{% static request.user.perfil.foto %}" id="foto_user" alt="Foto de perfil">
+        {% else %}
+            <!-- Caso o usuário não tenha foto -->
+            <img src="{% static 'img/default-avatar.png' %}" id="foto_user" alt="Foto de perfil">
+        {% endif %}</div>
         <div class="profile-info">
-          <h2>Rita Lis</h2>
+          <h2>{{request.user.first_name}}</h2>
           <button class="edit-button">EDITAR PERFIL</button>
+          <button class="edit-button">ADICIONAR OBRA</button>
         </div>
       </div>
       <section>
@@ -44,10 +50,12 @@
         <div class="lista-obras">
             {% for obra in obras %}
             <div class="obra">
+                <a id="sub" href="{% url 'artistas:lista_obras' obra.id %}">
                 <div class="imagem">
                     <img src="{% static obra.imagem %}" alt="{{ obra.titulo }}" class="imgObras">
                 </div>
                 <p>{{ obra.titulo }}</p>
+                </a>
             </div>
             {% endfor %}
         </div>

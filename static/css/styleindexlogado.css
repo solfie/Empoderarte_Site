@@ -91,12 +91,16 @@ h2 {
 }
 
 /* Estilo para artistas e obras */
-.lista-artistas, .lista-obras {
+.lista-artistas {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(6, 1fr); /* 6 colunas */
     gap: 20px;
 }
-
+.lista-obras {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr); /* 6 colunas */
+    gap: 20px; /* Espaçamento entre os itens */
+}
 .artista, .obra {
     background-color: #f5e8d9;
     border: 1px solid #d4c4a8;
@@ -205,17 +209,26 @@ a{
     font-size: 0.9em;
 }
 
-#foto_user{
-    position: relative;
-    border-radius: 100px;
-    width: 10%;
-    height: 10%;
-    left: 90%;
+.usuario {
+    display: flex; /* Alinha os elementos em linha */
+    align-items: center; /* Centraliza verticalmente */
+    gap: 20px; /* Espaçamento entre imagem e texto */
+    margin: 20px; /* Espaçamento externo */
 }
 
-.usuario p{
-    position: absolute;
-    top: 150px;
+/* Estilização da foto do usuário */
+#foto_user {
+    border-radius: 50%; /* Torna a imagem circular */
+    width: 80px;
+    height: 80px;
+    object-fit: cover; /* Garante que a imagem não distorça */
+}
+
+/* Texto do usuário */
+.usuario p {
+    margin: 0; /* Remove margens padrão */
+    font-size: 16px; /* Ajusta o tamanho da fonte */
+    color: #333; /* Cor do texto */
 }
 
 footer {

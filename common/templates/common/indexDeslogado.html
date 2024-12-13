@@ -31,7 +31,7 @@
                 <div class="artista">
                     <a id="sub" href="{% url 'artistas:perfil_artista' artista.id %}"> 
                     <div class="foto">
-                        <img src="{% static artista.foto %}" alt="{{ artista.usuario.user.first_name }}">
+                        <img src="{% static artista.usuario.foto %}" alt="{{ artista.usuario.user.first_name }}">
                     </div>
                     <p>{{ artista.usuario.user.first_name }}</p>
                 </a>
@@ -45,12 +45,12 @@
             <div class="lista-obras">
                 {% for obra in obras %}
                 <div class="obra">
-                   
+                    <a id="sub" href="{% url 'artistas:lista_obras' obra.id %}">
                     <div class="imagem">
                         <img src="{% static obra.imagem %}"alt="{{ obra.titulo }}" class="imgObras">
                     </div>
                     <p>{{ obra.titulo }}</p>
-          
+                    </a>
                 </div>
                 {% endfor %}
             </div>

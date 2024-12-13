@@ -93,7 +93,7 @@ h2 {
 /* Estilo para artistas e obras */
 .lista-artistas, .lista-obras {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    grid-template-columns: repeat(6, 1fr); /* 6 colunas */
     gap: 20px;
 }
 
